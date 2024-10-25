@@ -14,6 +14,8 @@ import sequelize from './config/dataBase.js';
 import User from './models/user.js'
 import Tasks from './models/tasks.js';
 import './models/association.js';
+import { registerUser } from './controllers/auth/register.js';
+import auth from './routes/auth.js';
 //intanciando express
 const app = express();
 
@@ -23,7 +25,7 @@ app.use(express.json());
 app.use(passport.initialize())
 
 //rotas
-
+app.use('/', auth)
 
 
 //iniciando server 
@@ -31,4 +33,5 @@ const PORT = 3333 || process.env.PORT;
 app.listen(PORT, ()=>{
     console.log('Servidor rodando na porta ' + PORT + 'http://localhost3333')
 })
+
 
