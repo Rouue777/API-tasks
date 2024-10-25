@@ -7,7 +7,7 @@ import { registerUser } from '../controllers/auth/register.js';
 const router = express.Router();
 
 //rota de registro
-router.post("/api/task/add", registerUser)
+router.post("/api/auth/register", registerUser)
 
 export default router; 
 
