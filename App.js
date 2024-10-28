@@ -16,13 +16,20 @@ import Tasks from './models/tasks.js';
 import './models/association.js';
 import { registerUser } from './controllers/auth/register.js';
 import auth from './routes/auth.js';
+import { loginFunction } from './controllers/auth/login.js';
+import configPassport from './config/passportConfig.js'
+
 //intanciando express
 const app = express();
+
+//configuracao passport
+configPassport(passport)
 
 //configurando midleewares
 app.use(cors());
 app.use(express.json());
-app.use(passport.initialize())
+app.use(express.urlencoded({ extended: true }));
+app.use(passport.initialize());
 
 //rotas
 app.use('/', auth)
