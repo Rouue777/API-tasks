@@ -20,6 +20,7 @@ import taskRoute from './routes/tasks.js'
 import { loginFunction } from './controllers/auth/login.js';
 import configPassport from './config/passportConfig.js'
 
+
 //intanciando express
 const app = express();
 
