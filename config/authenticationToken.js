@@ -11,7 +11,7 @@ const autheticationToken = (req,res,next) => {
     }
 
     //validacao decodificao do token
-    jwt.verify(token, process.env.JWT_SECRET, (err,user) => {
+    jwt.verify(token, "you_jwt_secret", (err,user) => {
         if(err) {return res.status(403).json({message : "token invalido"})}
 
 
@@ -21,5 +21,6 @@ const autheticationToken = (req,res,next) => {
   
     
 }
+
 
 export default autheticationToken;

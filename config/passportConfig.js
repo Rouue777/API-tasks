@@ -7,7 +7,7 @@ import User from '../models/user.js';
 //configuracao para usar jwt
 const options = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-     secretOrKey: process.env.JWT_SECRET || 'you_jwt_secret'
+     secretOrKey:  'you_jwt_secret'
 }
 
 // Configura o Passport para usar a estratégia JWT

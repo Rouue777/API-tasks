@@ -16,6 +16,7 @@ import Tasks from './models/tasks.js';
 import './models/association.js';
 import { registerUser } from './controllers/auth/register.js';
 import auth from './routes/auth.js';
+import taskRoute from './routes/tasks.js'
 import { loginFunction } from './controllers/auth/login.js';
 import configPassport from './config/passportConfig.js'
 
@@ -33,6 +34,7 @@ app.use(passport.initialize());
 
 //rotas
 app.use('/', auth)
+app.use('/', taskRoute )
 
 
 //iniciando server 
