@@ -6,6 +6,7 @@ import Tasks from "../models/tasks.js";
 import { createTask } from "../controllers/tasks/add.js";
 import { showTasks } from "../controllers/tasks/showTaskUser.js";
 import { updateTasks } from "../controllers/tasks/update.js";
+import { deleteTasks } from "../controllers/tasks/deleteTasks.js";
 import express from 'express'
 import passport from "passport";
 
@@ -23,6 +24,9 @@ router.get('/api/task/user', autheticationToken, showTasks)
 
 //criando rota para atualizar tasks
 router.post('/api/task/update/:id', autheticationToken, updateTasks)
+
+//criando rota para deletar tasks
+router.post('/api/task/delete/:id', autheticationToken, deleteTasks)
 
 //exportando router
 export default router
