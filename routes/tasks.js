@@ -7,6 +7,7 @@ import { createTask } from "../controllers/tasks/add.js";
 import { showTasks } from "../controllers/tasks/showTaskUser.js";
 import { updateTasks } from "../controllers/tasks/update.js";
 import { deleteTasks } from "../controllers/tasks/deleteTasks.js";
+import { checkTask } from "../controllers/tasks/completedTasks.js";
 import express from 'express'
 import passport from "passport";
 
@@ -27,6 +28,9 @@ router.post('/api/task/update/:id', autheticationToken, updateTasks)
 
 //criando rota para deletar tasks
 router.post('/api/task/delete/:id', autheticationToken, deleteTasks)
+
+//criando rota para marcar checkbox
+router.post("/api/task/complete/:id", autheticationToken, checkTask)
 
 //exportando router
 export default router
