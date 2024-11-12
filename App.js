@@ -20,6 +20,8 @@ import taskRoute from './routes/tasks.js'
 import { loginFunction } from './controllers/auth/login.js';
 import configPassport from './config/passportConfig.js'
 
+//Carregar variaveis do env
+dotenv.config()
 
 //intanciando express
 const app = express();
