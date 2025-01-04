@@ -19,6 +19,8 @@ const router = express.Router();
 //aplicando autenticacao
 router.use(passport.authenticate('jwt', { session: false }));
 
+
+
 //criando rota de criacao
 router.post('/api/task/add', autheticationToken, verifyTokenBlackList ,createTask)
 

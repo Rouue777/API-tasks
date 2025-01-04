@@ -11,6 +11,12 @@ import { logOut } from '../controllers/auth/logout.js';
 //instanciando o metodo router
 const router = express.Router();
 
+//criando
+router.get('', (req, res) => {
+    console.log('Acessando a rota raiz');
+    res.send('API está funcionando!');
+})
+
 //rota de registro
 router.post("/api/auth/register", registerUser)
 

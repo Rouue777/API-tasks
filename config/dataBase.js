@@ -3,12 +3,12 @@ import express from 'express';
 import { Sequelize } from 'sequelize';
 
 //definindo credenciais
-const name = "APITasks" || process.env.NAME;
-const user = "root" || process.env.USER;
-const password = 'sql123' || process.env.PASSWORD;
-const host = 'localhost' || process.env.HOSTNAME;
-const dialect = "mysql" || process.env.DIALECT;
-const port = '3306' || process.env.PORT;
+const name =  process.env.NAME || 'apitasks'
+const user =  process.env.USER || 'admin' ;
+const password =  process.env.PASSWORD || 'mysql123'
+const host =  process.env.HOSTNAME || 'databaseawstest.czsywmyi22r7.us-east-1.rds.amazonaws.com'
+const dialect =  process.env.DIALECT || 'mysql' ;
+const port =  process.env.DB_PORT || '3306';
 
 
 //instanciando a classe Sequelize
