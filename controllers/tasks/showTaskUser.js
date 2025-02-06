@@ -6,7 +6,7 @@ import Tasks from "../../models/tasks.js";
 //function para mostrar tasks
  export  const  showTasks = async (req,res) => {
     try{ 
-        const tasksUser = await Tasks.findAll({where:{userID : req.user.id}})//capturar array com as tasks
+        const tasksUser = await Tasks.findAll({where:{userId : req.user.id}})//capturar array com as tasks
         if(tasksUser.length === 0){
             return res.status(400).json({message : "Nenhuma Tarefa encontrada", type: "Usuario não possui tarefas"})
         }

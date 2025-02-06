@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "sql123",
+    "database": "app_agendamentodb",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "sql123",
+    "database": "app_agendamentodb",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "sql123",
+    "database": "app_agendamentodb",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

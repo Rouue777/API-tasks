@@ -1,32 +1,32 @@
-//imports
+// Imports
 import express from 'express';
 import { Sequelize } from 'sequelize';
 
-//definindo credenciais
-const name =  process.env.NAME || 'apitasks'
-const user =  process.env.USER || 'admin' ;
-const password =  process.env.PASSWORD || 'mysql123'
-const host =  process.env.HOSTNAME || 'databaseawstest.czsywmyi22r7.us-east-1.rds.amazonaws.com'
-const dialect =  process.env.DIALECT || 'mysql' ;
-const port =  process.env.DB_PORT || '3306';
+// Definindo credenciais
+const name = process.env.NAME || 'app_agendamentodb';
+const user = process.env.USER || 'postgres';
+const password = process.env.PASSWORD || 'sql123';
+const host = process.env.HOSTNAME || 'localhost';
+const dialect = process.env.DIALECT || 'postgres';
+const port = process.env.DB_PORT || "3333"; // testar 3333
 
-
-//instanciando a classe Sequelize
+// Instanciando a classe Sequelize
 const sequelize = new Sequelize(name, user, password, {
-    host : host,
-    dialect : dialect,
-    port : port,
-    dialectOptions: {
+    host: host,
+    dialect: dialect,
+    port: port,
+    dialectOptions: { 
         connectTimeout: 60000
     }
 });
 
-//autenticando conexao
-sequelize.authenticate().then(() =>{
-  console.log('Conexão com banco de dados estabelecida com sucesso')
-}).catch((err) =>{
- console.log('Erro ao conectar ao db ' + err)
-});
+// Autenticando conexão
+sequelize.authenticate()
+  .then(() => {
+    console.log('Conexão com banco de dados estabelecida com sucesso');
+  })
+  .catch((err) => {
+    console.log('Erro ao conectar ao banco de dados: ', err);
+  });
 
 export default sequelize;
-
